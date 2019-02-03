@@ -16,25 +16,49 @@ public class DateFormat {
 //		String str2 = scf.format(F1);
 //		System.out.println("The first time format by YYYY-MM-DD: " + str2);
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/DD HH:mm:ss");
-		Date d1 = new Date();
-		String str = sdf.format(d1);
-		System.out.println("String "+ str + " use the format yyyy-MM-DD HH:mm:ss");
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/DD HH:mm:ss");
+//		Date d1 = new Date();
+//		String str = sdf.format(d1);
+//		System.out.println("String "+ str + " use the format yyyy-MM-DD HH:mm:ss");
+////		
+//		try {
+//			
+//			Date d = sdf.parse(str);
+//			System.out.println("An other explan is " + d.toString());
+//		} catch (ParseException e) {
+//			// TODO: handle exception
+//			e.printStackTrace();
+//		}
 //		
-		try {
-			
-			Date d = sdf.parse(str);
-			System.out.println("An other explan is " + d.toString());
-		} catch (ParseException e) {
-			// TODO: handle exception
-			e.printStackTrace();
+		long s = 1000;
+		long m = 60*s;
+		long h = 60*m;
+		long day = 24*h;
+		long year = 365*day;
+		long diff = (2001 - 1970)*year;
+		double yearofday = (double)(2001 - 1970)/4;
+		
+		double num = yearofday%1;
+		System.out.println(yearofday);
+		System.out.println(num);
+		
+		if(num>0.5) {
+			long runyear = (long) (Math.ceil(yearofday) *day);
+			long max = 0 + diff + runyear + 5*h -1;
+			Date d1 = new Date(max);
+			System.out.println("Answer " + d1);
+			System.out.println("num>05 " + max);
+		} else {
+			long runyear = (long) (Math.floor(yearofday) *day);
+			long max = 0 + diff + runyear + 5*h -1;
+			Date d1 = new Date(max);
+			System.out.println("Answer " + d1);
+			System.out.println("num<05 " + max);
 		}
+
 		
 		
-		
-		
-		
-		
+
 	}
 
 }
