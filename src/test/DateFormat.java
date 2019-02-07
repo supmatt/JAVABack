@@ -2,7 +2,7 @@ package test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.lang.ArrayIndexOutOfBoundsException;
 public class DateFormat {
 
 	@SuppressWarnings("deprecation")
@@ -30,35 +30,32 @@ public class DateFormat {
 //			// TODO: handle exception
 //			e.printStackTrace();
 //		}
-//		
+//		// set basic date information
 		long s = 1000;
 		long m = 60*s;
 		long h = 60*m;
 		long day = 24*h;
 		long year = 365*day;
 		long diff = (2001 - 1970)*year;
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
-		Date start = new Date(0);
-		Date DD = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss"); // set format of explain
+		Date start = new Date(0); // Year of 1979
 		double yearofday = (double)(2001 - 1970)/4;
 		
 		double num = yearofday%1;
-//		System.out.println(yearofday);
-//		System.out.println(num);
+
 		long runyear;
+		//set ÈòÄê 
 		if(num>0.5) {
 			runyear = (long) (Math.ceil(yearofday) *day);
-			
-//			System.out.println("Answer " + d1);
 		} else {
 			runyear = (long) (Math.floor(yearofday) *day);
-			
-//			System.out.println("Answer " + d1);
 		}
-		long max = 0 + diff + runyear + 5*h -1;
-		Date d1 = new Date(max);
-		Date[] Darray = new Date[9];
+		
+		long max = 0 + diff + runyear + 5*h -1;  //get last hour of 2000
+		
+		Date[] Darray = new Date[9]; // set 9 Array
 		System.out.println("Get the 9 random arrary: ");
+		//Obtain date detail
 		for(int i = 0; i < Darray.length; i++) {
 			Darray[i] = new Date((long)(Math.random() *max) + start.getTime()) ;
 			if(i%3 ==2 ) {
@@ -67,37 +64,44 @@ public class DateFormat {
 				System.out.print(sdf.format(Darray[i]) + "\t");
 			}
 		}
-		System.out.println("After Array the Items, we get: ");
+		System.out.println("After Array the Items, we get: ");//print 9 date detail
 		
+		//set new format and create new array by time
+		String[] Darray2 = new String[9];
+		SimpleDateFormat sdf2 = new SimpleDateFormat("HHmmss");
+		for(int i = 0; i<Darray.length; i++) {
+			Darray2[i] = sdf2.format(Darray[i]);
+		}
 		
-		long[] Total = new long[9];
-		
-		for(int i = 0; i < Total.length; i++) {
-			long ho = 0;
-			Date demo = new Date();
-			ho = Darray[i].getTime();
-			for(int j = 0; i < Total.length; i++) {
-				long ho2 = 0;
-				
-				ho2 = Darray[j].getTime();
-				
-				if(ho < ho2) {
-					long ho3 = ho2; ho2 = ho; ho = ho3;
+//		System.out.println(Darray2[1]);
+		//Arrange the new array
+		for(String i: Darray2) {
+//			System.out.println(i);
+			for(String j:Darray2) {
+				int nn = Integer.parseInt(i);
+				int mm = Integer.parseInt(j);
+//				int nn = Integer.parseInt(Darray2[i]);
+//				int mm = Integer.parseInt(Darray2[j]);
+				if(nn > mm) {
+					String ti = i;
+					i=j;
+					j= ti;
 					
 				}
-			}	
-			
-		}
-		for(int i = 0; i < Darray.length; i++) {
-			
-			if(i%3 ==2 ) {
-				System.out.println(sdf.format(Darray[i]));
-			}else {
-				System.out.print(sdf.format(Darray[i]) + "\t");
 			}
+			
 		}
-		Date tt = new Date(max);
-		System.out.println(sdf.format(tt.getTime()));
+		System.out.println(Darray2[1]);
+//		for(int i = 0; i < Darray2.length; i++) {
+//			
+//			if(i%3 ==2 ) {
+//				System.out.println(sdf.format(Darray2[i]));
+//			}else {
+//				System.out.print(sdf.format(Darray2[i]) + "\t");
+//			}
+//		}
+//		Date tt = new Date(max);
+//		System.out.println(sdf.format(tt.getTime()));
 	}
 
 }
