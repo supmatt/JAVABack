@@ -1,11 +1,11 @@
 package test;
-import java.text.ParseException;
+//import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.lang.ArrayIndexOutOfBoundsException;
+//import java.lang.ArrayIndexOutOfBoundsException;
 public class DateFormat {
-
-	@SuppressWarnings("deprecation")
+//http://how2j.cn/k/date/date-format/348.html#nowhere
+	//@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		Date F1 = new Date();
@@ -67,31 +67,30 @@ public class DateFormat {
 		System.out.println("After Array the Items, we get: ");//print 9 date detail
 		
 		//set new format and create new array by time
-		String[] Darray2 = new String[9];
-		SimpleDateFormat sdf2 = new SimpleDateFormat("HHmmss");
-		for(int i = 0; i<Darray.length; i++) {
-			Darray2[i] = sdf2.format(Darray[i]);
-		}
+//		String[] Darray2 = new String[9];
+//		SimpleDateFormat sdf2 = new SimpleDateFormat("HHmmss");
+//		for(int i = 0; i<Darray.length; i++) {
+//			Darray2[i] = sdf2.format(Darray[i]);
+//		}
 		
 //		System.out.println(Darray2[1]);
 		//Arrange the new array
-		for(String i: Darray2) {
-//			System.out.println(i);
-			for(String j:Darray2) {
-				int nn = Integer.parseInt(i);
-				int mm = Integer.parseInt(j);
-//				int nn = Integer.parseInt(Darray2[i]);
-//				int mm = Integer.parseInt(Darray2[j]);
-				if(nn > mm) {
-					String ti = i;
-					i=j;
-					j= ti;
-					
-				}
-			}
-			
-		}
-		System.out.println(Darray2[1]);
+//		for(String i: Darray2) {
+//
+//			for(String j:Darray2) {
+//				int nn = Integer.parseInt(i);
+//				int mm = Integer.parseInt(j);
+//
+//				if(nn > mm) {
+//					String ti = i;
+//					i=j;
+//					j= ti;
+//					
+//				}
+//			}
+//			
+//		}
+		
 //		for(int i = 0; i < Darray2.length; i++) {
 //			
 //			if(i%3 ==2 ) {
@@ -100,8 +99,37 @@ public class DateFormat {
 //				System.out.print(sdf.format(Darray2[i]) + "\t");
 //			}
 //		}
-//		Date tt = new Date(max);
-//		System.out.println(sdf.format(tt.getTime()));
+		for (int j = 0; j < Darray.length -1; j++) {
+			for (int i = j + 1; i < Darray.length; i++) {
+				String strTimeI = toString(Darray[i],"HHmmss");
+				String strTimeJ = toString(Darray[j],"HHmmss");
+				int TimeI = Integer.parseInt(strTimeI);
+				int TimeJ = Integer.parseInt(strTimeJ);
+				
+				if(TimeI<TimeJ) {
+					Date temp = Darray[j];
+					Darray[j] = Darray[i];
+					Darray[i] = temp;
+			}
+		}
 	}
+		for(int i = 0; i < Darray.length; i++) {
+			
+			if(i%3 ==2 ) {
+				System.out.println(sdf.format(Darray[i]));
+			}else {
+				System.out.print(sdf.format(Darray[i]) + "\t");
+			}
+		}
+
+}
+//	public static String toString(Date d) {
+//        return toString(d, "yyyy-MM-dd HH:mm:ss");
+//    }
+	public static String toString(Date d, String format) {
+    SimpleDateFormat sdf = new SimpleDateFormat(format);
+    return sdf.format(d);
+}
+	
 
 }
