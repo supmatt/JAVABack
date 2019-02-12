@@ -76,14 +76,55 @@ public class CloseBox {
 //		System.out.format("%,8d%n",year*1000000);
 //		System.out.format("%.2f%n", Math.PI);
 //		System.out.format(Locale.CANADA,"%,.2f%n",Math.PI*10000);
-		String[] input7 = new String[7];
-		for(int i=0; i <7; i++) {
-			Scanner s = new Scanner(System.in);
-			System.out.println("Please input some word ");
-			input7[i] = s.nextLine();
-		}
-		String content = "%s最大%s,倒闭了，王八蛋老板%s吃喝嫖赌，欠下了%s个亿，带着他的小姨子跑了!我们没有办法，拿着%s抵工资!原价都是一%s多的%s，现在全部只卖二十块，统统只要二十块!王八蛋，你不是人!我们辛辛苦苦给你干了大半年，你不发工资，你还我血汗钱，还我血汗钱!";
-		System.out.format(content,input7[0],input7[1],input7[2],input7[3],input7[4],input7[5],input7[6]);
+//		String[] input7 = new String[7];
+//		for(int i=0; i <7; i++) {
+//			Scanner s = new Scanner(System.in);
+//			System.out.println("Please input some word ");
+//			input7[i] = s.nextLine();
+//		}
+//		String content = "%s最大%s,倒闭了，王八蛋老板%s吃喝嫖赌，欠下了%s个亿，带着他的小姨子跑了!我们没有办法，拿着%s抵工资!原价都是一%s多的%s，现在全部只卖二十块，统统只要二十块!王八蛋，你不是人!我们辛辛苦苦给你干了大半年，你不发工资，你还我血汗钱，还我血汗钱!";
+//		System.out.format(content,input7[0],input7[1],input7[2],input7[3],input7[4],input7[5],input7[6]);
+		//character
+//		char c1 ='a';
+//		char c2 ='1';
+//		char c3 = '啦';
+//		char c4 = 'b';
+//		Character c = c1;
+//		c1 = c;
+//		System.out.println(Character.isLetter('a'));
+//		System.out.println(Character.isDigit(c2));
+//		System.out.println(Character.isWhitespace(' '));
+//		System.out.println(Character.isUpperCase('a'));
+//		System.out.println(Character.isLowerCase('a'));
+//		System.out.println(Character.toUpperCase('a'));
+//		System.out.println(Character.toLowerCase('A'));
+//		
+//		String a = 'a';
+//		String a2 = Character.toString('a');
+		
+		System.out.println("使用空格无法达到对齐的效果");
+        System.out.println("abc def");
+        System.out.println("ab def");
+        System.out.println("a def");
+          
+        System.out.println("使用\\t制表符可以达到对齐的效果");
+        System.out.println("abc\tdef");
+        System.out.println("ab\tdef");
+        System.out.println("a\tdef");
+         
+        System.out.println("一个\\t制表符长度是8");
+        System.out.println("12345678def");
+          
+        System.out.println("换行符 \\n");
+        System.out.println("abc\ndef");
+ 
+        System.out.println("单引号 \\'");
+        System.out.println("abc\'def");
+        System.out.println("双引号 \\\"");
+        System.out.println("abc\"def");
+        System.out.println("反斜杠本身 \\");
+        System.out.println("abc\\def");
+		
 	}
 
 }
