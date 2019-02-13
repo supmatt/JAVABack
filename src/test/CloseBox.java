@@ -137,14 +137,16 @@ public class CloseBox {
 //        }
 
 		
-		String garen = "盖伦";
-		String teemo = new String("提莫");
-		char[] cs = new char[]{'崔','斯','特'};
-		String hero = new String(cs);
-		String hero2 = garen + teemo;
+		String name = "盖伦";
+//		String teemo = new String("提莫");
+//		char[] cs = new char[]{'崔','斯','特'};
+//		String hero = new String(cs);
+//		String hero2 = garen + teemo;
+		System.out.println(name.length());
+		String unknowHero = "";
+		System.out.println(unknowHero.length());
 		
 		//MyString str = new MyString(); 
-		garen = "asd";
-		System.out.println(garen);
+		
 	}
 }
