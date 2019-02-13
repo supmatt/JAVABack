@@ -137,16 +137,41 @@ public class CloseBox {
 //        }
 
 		
-		String name = "¸ÇÂ×";
+//		String name = "¸ÇÂ×";
 //		String teemo = new String("ÌáÄª");
 //		char[] cs = new char[]{'´Þ','Ë¹','ÌØ'};
 //		String hero = new String(cs);
 //		String hero2 = garen + teemo;
-		System.out.println(name.length());
-		String unknowHero = "";
-		System.out.println(unknowHero.length());
+//		System.out.println(name.length());
+//		String unknowHero = "";
+//		System.out.println(unknowHero.length());
 		
 		//MyString str = new MyString(); 
+		//exercise 6
+		
+		char[] ran = new char[6];
+		
+		for(char item:ran) {
+			int a = (int) (Math.random()*100);
+			double b = Math.random();
+			if(a <=33) {
+				int c = (int)(b*10+48);
+//				System.out.print(a + ":" + b + "=");
+				char s = (char) c;
+				System.out.print(s);
+			}else if(a<=66) {
+				int c= (int)(b*26+65);
+//				System.out.print(a + ":" + b + "=");
+				char s = (char) c;
+				System.out.print(s);	
+			}else{
+				int c= (int)(b*26+97);
+//				System.out.print(a + ":" + b + "=");
+				char s = (char) c;
+				System.out.print(s);	
+				
+			}
+		}
 		
 	}
 }
