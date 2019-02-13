@@ -124,21 +124,27 @@ public class CloseBox {
 //        System.out.println("abc\"def");
 //        System.out.println("反斜杠本身 \\");
 //        System.out.println("abc\\def");
-		String str = "abc123";
-		char[] cs = str.toCharArray(); 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Please some word: ");
-		String input1 = sc.nextLine();
-		for (char item : cs) {
-            if (Character.isUpperCase(item)) {
-                System.out.print(item);
-            }
-            if(Character.isDigit(item)) {
-            	System.out.print(item);
-            }
-        }
+		
+		
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Please some word: ");
+//		String str = sc.nextLine();
+//		char[] cs = str.toCharArray(); 
+//		for (char item : cs) {
+//            if (Character.isUpperCase(item)||Character.isDigit(item)) {
+//                System.out.print(item);
+//            }
+//        }
 
 		
+		String garen = "盖伦";
+		String teemo = new String("提莫");
+		char[] cs = new char[]{'崔','斯','特'};
+		String hero = new String(cs);
+		String hero2 = garen + teemo;
+		
+		//MyString str = new MyString(); 
+		garen = "asd";
+		System.out.println(garen);
 	}
-
 }
