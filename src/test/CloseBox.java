@@ -170,9 +170,30 @@ public class CloseBox {
 //		}
 //		char[] ch = new char[8];
 		//Control string
-		String sentence = "asdf盖伦,在进行";
-		char c = sentence.charAt(6);
-		System.out.println(c);
+		String sentence = " aSD,f3盖伦,在进 行  ";
+		String sentence2 = "盖伦,在进行了连续8次击杀后,获得了超神 的称号";
+//		char c = sentence.charAt(6);
+//		System.out.println(c);
+//		char[] cs = sentence.toCharArray();
+//		System.out.println(sentence.length()== cs.length);
+//		String subString1 = sentence.substring(3);
+//		System.out.println(subString1);
+//		String subString2 = sentence.substring(3, 6);
+//		System.out.println(subString2);
 		
+//		String subSentences[] = sentence.split(",");
+//		for(String sub:subSentences) {
+//			System.out.println(sub);
+//		}
+		
+//		System.out.println(sentence);
+//		System.out.println(sentence.trim());
+//		System.out.println(sentence.toLowerCase());
+//		System.out.println(sentence.toUpperCase());
+		
+		System.out.println(sentence.indexOf("盖伦"));
+		System.out.println(sentence2.lastIndexOf("了"));
+		System.out.println(sentence.indexOf(',',5));
+		System.out.println(sentence.contains("击杀"));
 	}
 }
