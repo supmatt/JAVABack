@@ -201,18 +201,26 @@ public class CloseBox {
 //		System.out.println(temp);
 //		temp = sentence.replaceFirst(",", "");
 //		System.out.println(temp);
-		String sentence3 = "let there be light";
+//		String sentence3 = "let there be light";
 //		String toup = sentence3.toUpperCase();
 //		System.out.println(toup);
-		String subs[] = sentence3.split(" ");
-		for(String sub:subs) {
-			for(int i=0; i<sub.length(); i++) {
-				if(i==0) {
-					sub[0] = sub[0].toUpperCase();
-				}
-				
-			}
-			System.out.println(sub);
-		}
+//		String subs[] = sentence3.split(" ");
+//		for(String sub:subs) {
+//			for(int i=0; i<sub.length(); i++) {
+//				if(i==0) {
+////					sub[0] = sub[0].toUpperCase();
+//				}
+//				
+//			}
+//			System.out.println(sub);
+//	}
+		//compare String
+		String str1 =  "the light";
+		String str2 = new String(str1);
+		String str3 = "the light";
+		System.out.println(str1 == str2);
+		System.out.println(str1 == str3);
+		
+		
 	}
 }
