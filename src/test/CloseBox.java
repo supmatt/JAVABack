@@ -170,8 +170,8 @@ public class CloseBox {
 //		}
 //		char[] ch = new char[8];
 		//Control string
-		String sentence = " aSD,f3盖伦,在进 行  ";
-		String sentence2 = "盖伦,在进行了连续8次击杀后,获得了超神 的称号";
+		String sentence1 = " aSD,f3盖伦,在进 行  ";
+		String sentence = "盖伦,在进行了连续8次击杀后,获得了超神 的称号";
 //		char c = sentence.charAt(6);
 //		System.out.println(c);
 //		char[] cs = sentence.toCharArray();
@@ -191,9 +191,28 @@ public class CloseBox {
 //		System.out.println(sentence.toLowerCase());
 //		System.out.println(sentence.toUpperCase());
 		
-		System.out.println(sentence.indexOf("盖伦"));
-		System.out.println(sentence2.lastIndexOf("了"));
-		System.out.println(sentence.indexOf(',',5));
-		System.out.println(sentence.contains("击杀"));
+//		System.out.println(sentence.indexOf("盖伦"));
+//		System.out.println(sentence2.lastIndexOf("了"));
+//		System.out.println(sentence.indexOf(',',5));
+//		System.out.println(sentence.contains("击杀"));
+		
+//		String temp = sentence.replaceAll("击杀", "被击杀");
+//		temp = temp.replaceAll("超神", "超鬼");
+//		System.out.println(temp);
+//		temp = sentence.replaceFirst(",", "");
+//		System.out.println(temp);
+		String sentence3 = "let there be light";
+//		String toup = sentence3.toUpperCase();
+//		System.out.println(toup);
+		String subs[] = sentence3.split(" ");
+		for(String sub:subs) {
+			for(int i=0; i<sub.length(); i++) {
+				if(i==0) {
+					sub[0] = sub[0].toUpperCase();
+				}
+				
+			}
+			System.out.println(sub);
+		}
 	}
 }
