@@ -170,8 +170,8 @@ public class CloseBox {
 //		}
 //		char[] ch = new char[8];
 		//Control string
-		String sentence1 = " aSD,f3盖伦,在进 行  ";
-		String sentence = "盖伦,在进行了连续8次击杀后,获得了超神 的称号";
+//		String sentence1 = " aSD,f3盖伦,在进 行  ";
+//		String sentence = "盖伦,在进行了连续8次击杀后,获得了超神 的称号";
 //		char c = sentence.charAt(6);
 //		System.out.println(c);
 //		char[] cs = sentence.toCharArray();
@@ -215,12 +215,52 @@ public class CloseBox {
 //			System.out.println(sub);
 //	}
 		//compare String
-		String str1 =  "the light";
-		String str2 = new String(str1);
-		String str3 = "the light";
-		System.out.println(str1 == str2);
-		System.out.println(str1 == str3);
+//		String str1 =  "the light";
+//		String str2 = new String(str1);
+//		String str3 = "the light";
+//		System.out.println(str1 == str2);
+//		System.out.println(str1 == str3);
+//		String start = "the";
+//		String end = "ight";
+//		System.out.println(str1.startsWith(start));
+//		System.out.println(str1.endsWith(end));
+		//Exercise about compare String array
+		char[] two = new char[100];
+		for(int i=0; i<100; i++) {
+			char n = (char) (Math.random()*100);
+			two[i] = n;
+			
+			int a = (int) (Math.random()*100);
+			int b = (int) (Math.random()*100);
+			System.out.println(abs(a));
+//			char[] dd = new char[2] {abs(a),abs(b)};
+			
+//			String ab = (String) ((char)abs(a) + (char)abs(b));
+//			double b = Math.random();
+//			
+			
+//			if((i+1)%20==0) {
+//				System.out.println(ab+" ");
+//			}else {
+//				System.out.print(ab+" ");
+//			}
+		}
 		
+	}
+	public static char abs(int a) {
+		double b = Math.random();
+		char s;
+		if(a <=33) {
+			int c = (int)(b*10+48);
+			s = (char) c;
+		}else if(a<=66) {
+			int c= (int)(b*26+65);
+			s = (char) c;
+		}else{
+			int c= (int)(b*26+97);
+			s = (char) c;
+		}
+		return s;
 		
 	}
 }
