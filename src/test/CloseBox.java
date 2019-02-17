@@ -225,27 +225,34 @@ public class CloseBox {
 //		System.out.println(str1.startsWith(start));
 //		System.out.println(str1.endsWith(end));
 		//Exercise about compare String array
-		char[] two = new char[100];
+		String[] two = new String[100];
+		int samenum= 0;
+		String sameanswer = "";
 		for(int i=0; i<100; i++) {
 			char n = (char) (Math.random()*100);
-			two[i] = n;
-			
 			int a = (int) (Math.random()*100);
 			int b = (int) (Math.random()*100);
-			System.out.println(abs(a));
-//			char[] dd = new char[2] {abs(a),abs(b)};
+
+			String doubleDouble= abs(a)+""+abs(b);
+			two[i] = doubleDouble;
 			
-//			String ab = (String) ((char)abs(a) + (char)abs(b));
-//			double b = Math.random();
-//			
+			if((i+1)%20==0) {
+				System.out.println(doubleDouble);
+			}else {
+				System.out.print(doubleDouble+ " ");
+			}
 			
-//			if((i+1)%20==0) {
-//				System.out.println(ab+" ");
-//			}else {
-//				System.out.print(ab+" ");
-//			}
+			for(int j = 0; j<i; j++) {
+				if (doubleDouble.equals(two[j])) {
+					samenum+=1;
+					sameanswer += doubleDouble + " ";
+				}
+			}
+			
 		}
-		
+		System.out.printf("Total have %s pair number exist", samenum);
+		System.out.println();
+		System.out.println("String exist are: " + sameanswer);
 	}
 	public static char abs(int a) {
 		double b = Math.random();
