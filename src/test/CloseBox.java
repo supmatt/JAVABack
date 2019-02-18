@@ -2,6 +2,7 @@ package test;
 
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.swing.plaf.synth.SynthSeparatorUI;
@@ -287,21 +288,27 @@ public class CloseBox {
 //		System.out.println(str1.length());
 //		System.out.println(sb.capacity());
 		
-		String[] a = new String[10000];
-		System.out.println(a.length);
-		String b ="", c = "";
-		 long d1 = System.currentTimeMillis();
-		for(int i = 0; i< a.length; i ++) {
-			b += (char)(Math.random()*100);
-		}
-		long d2 = System.currentTimeMillis();
+//		String[] a = new String[10000];
+//		System.out.println(a.length);
+//		String b ="", c = "";
+//		 long d1 = System.currentTimeMillis();
+//		for(int i = 0; i< a.length; i ++) {
+//			b += (char)(Math.random()*100);
+//		}
+//		long d2 = System.currentTimeMillis();
+//		
+//		StringBuffer sb = new StringBuffer(c);
+//		for(String item: a) {
+//			sb.append((char)(Math.random()*100));
+//		}
+//		long d3 = System.currentTimeMillis();
+//		System.out.println("first time spend: " + (d2 - d1));
+//		System.out.println("second time spend: " + (d3 - d2));
+//		System.out.println(d3);
+//		Random random = new Random();
+//		int s = random.nextInt(3);  //good idea for random 0-2
+//		System.out.println(s);
+		//Exercice MyStringBuffer
 		
-		StringBuffer sb = new StringBuffer(c);
-		for(String item: a) {
-			sb.append((char)(Math.random()*100));
-		}
-		long d3 = System.currentTimeMillis();
-		System.out.println("first time spend: " + (d2 - d1));
-		System.out.println("second time spend: " + (d3 - d2));
 	}
 }
