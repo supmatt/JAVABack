@@ -1,9 +1,11 @@
 package test;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
 import javax.swing.plaf.synth.SynthSeparatorUI;
+import javax.xml.crypto.Data;
 
 public class CloseBox {
 
@@ -225,49 +227,81 @@ public class CloseBox {
 //		System.out.println(str1.startsWith(start));
 //		System.out.println(str1.endsWith(end));
 		//Exercise about compare String array
-		String[] two = new String[100];
-		int samenum= 0;
-		String sameanswer = "";
-		for(int i=0; i<100; i++) {
-			char n = (char) (Math.random()*100);
-			int a = (int) (Math.random()*100);
-			int b = (int) (Math.random()*100);
-
-			String doubleDouble= abs(a)+""+abs(b);
-			two[i] = doubleDouble;
-			
-			if((i+1)%20==0) {
-				System.out.println(doubleDouble);
-			}else {
-				System.out.print(doubleDouble+ " ");
-			}
-			
-			for(int j = 0; j<i; j++) {
-				if (doubleDouble.equals(two[j])) {
-					samenum+=1;
-					sameanswer += doubleDouble + " ";
-				}
-			}
-			
-		}
-		System.out.printf("Total have %s pair number exist", samenum);
-		System.out.println();
-		System.out.println("String exist are: " + sameanswer);
-	}
-	public static char abs(int a) {
-		double b = Math.random();
-		char s;
-		if(a <=33) {
-			int c = (int)(b*10+48);
-			s = (char) c;
-		}else if(a<=66) {
-			int c= (int)(b*26+65);
-			s = (char) c;
-		}else{
-			int c= (int)(b*26+97);
-			s = (char) c;
-		}
-		return s;
+//		String[] two = new String[100];
+//		int samenum= 0;
+//		String sameanswer = "";
+//		for(int i=0; i<100; i++) {
+//			char n = (char) (Math.random()*100);
+//			int a = (int) (Math.random()*100);
+//			int b = (int) (Math.random()*100);
+//
+//			String doubleDouble= abs(a)+""+abs(b);
+//			two[i] = doubleDouble;
+//			
+//			if((i+1)%20==0) {
+//				System.out.println(doubleDouble);
+//			}else {
+//				System.out.print(doubleDouble+ " ");
+//			}
+//			
+//			for(int j = 0; j<i; j++) {
+//				if (doubleDouble.equals(two[j])) {
+//					samenum+=1;
+//					sameanswer += doubleDouble + " ";
+//				}
+//			}
+//			
+//		}
+//		System.out.printf("Total have %s pair number exist", samenum);
+//		System.out.println();
+//		System.out.println("String exist are: " + sameanswer);
+//	}
+//	public static char abs(int a) {
+//		double b = Math.random();
+//		char s;
+//		if(a <=33) {
+//			int c = (int)(b*10+48);
+//			s = (char) c;
+//		}else if(a<=66) {
+//			int c= (int)(b*26+65);
+//			s = (char) c;
+//		}else{
+//			int c= (int)(b*26+97);
+//			s = (char) c;
+//		}
+//		return s;
+		//Stringbuffer
+//		String str1 = "let there ";
+//		StringBuffer sb = new StringBuffer(str1);
+//		sb.append("be light");
+//		System.out.println(sb);
+//		sb.delete(3, 5);
+//		System.out.println(sb);
+//		sb.insert(4, "there");
+//		System.out.println(sb);
+//		sb.reverse();
+//		System.out.println(sb);
+//		String str1 = "The";
+//		StringBuffer sb = new StringBuffer(str1);
+//		System.out.println(sb.length());
+//		System.out.println(str1.length());
+//		System.out.println(sb.capacity());
 		
+		String[] a = new String[10000];
+		System.out.println(a.length);
+		String b ="", c = "";
+		 long d1 = System.currentTimeMillis();
+		for(int i = 0; i< a.length; i ++) {
+			b += (char)(Math.random()*100);
+		}
+		long d2 = System.currentTimeMillis();
+		
+		StringBuffer sb = new StringBuffer(c);
+		for(String item: a) {
+			sb.append((char)(Math.random()*100));
+		}
+		long d3 = System.currentTimeMillis();
+		System.out.println("first time spend: " + (d2 - d1));
+		System.out.println("second time spend: " + (d3 - d2));
 	}
 }
